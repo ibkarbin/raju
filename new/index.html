@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html ng-app="Drag_app">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Draggable</title>
+    
+	<!-- AngularJS -->	
+	<script src='assets/jQuery/jquery.min.js'></script>
+
+	<!-- AngularJS -->
+	<script src="assets/AngularJs/angular.js"></script>
+    
+	<!-- Bootsrap -->
+<!-- 	<script src='assets/Bootstrap/bootstrap.min.js'></script>
+	<link href='assets/Bootstrap/bootstrap.min.css' rel='stylesheet'/>
+  
+	 -->
+    <!-- ng-sortable -->
+	
+    <link rel="stylesheet" href="assets/ng-sortable/ng-sortable.css" />
+    <link rel="stylesheet" href="assets/ng-sortable/ng-sortable.style.css" />
+    <script src="assets/ng-sortable/ng-sortable.js"></script>
+   
+    <!--ISCROLL-->
+	<script src="assets/iScroll/iscroll.js"></script>
+	
+	<!-- font awesome -->
+	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+
+	<!-- Custom -->
+  
+	<link href='css/main.css' rel='stylesheet'/>
+	<link href='css/common.css' rel='stylesheet'/>
+	<link href='css/theme.css' rel='stylesheet'/>
+	
+	<script src="js/app.js"></script>
+	<script src="js/WebService.js"></script>
+	<script src="js/init.js"></script>
+	<script src="js/directive.js"></script>
+	<script src="js/main.js"></script>
+	
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  </head>
+
+  <body ng-controller="MainCtrl" resize>
+	<div id='header-box' class=''>
+		<img id='logo' class='vertical-middle' src='img/logo-sample.png'/>
+		<div id='menu-box' class='box-t bg-white vertical-middle' >
+			<div class='item'><span class='vertical-middle d-block color-white'><i class=' color-white fa fa-sign-out '></i>Log Out</span></div>
+			<div class='item '><span class='vertical-middle d-block  color-white'><i class=' color-white fa fa-question'></i>Help</span></div>
+			<div class='item active'><span class='vertical-middle d-block'><i class='fa fa-calendar-o'></i>Boards</span></div>
+			<div class='item '><span class='vertical-middle d-block  color-white'><i class=' color-white fa fa-user'></i>Users</span></div>
+		</div>
+	</div>
+	
+	<div id='Wrap' class='h-100p p-top-balance'>
+		<div id='left-angle'  ng-show='left_angle_status' ng-click='next_board()' class='vertical-middle ' ><i class='fa fa-4x fa-angle-left color-white' ></i></div>	
+		<div id='right-angle' ng-show='right_angle_status' ng-click='prev_board()' class='vertical-middle ' ><i class='fa fa-4x fa-angle-right color-white ' ></i></div>	
+		
+		<div id='add-board'  ng-click='add_board()' class='text-center ' ><i class='vertical-middle fa fa-1x fa-plus color-white ' ></i></div>	
+		
+		<div id='viewport' > 
+			
+			<div id="wrapper" master>
+				<div class="scroller" ng-style='scroller_style'>
+					<div ng-style='slide_style' ng-repeat='board in boards' class='h-100p  slide board'>
+						<div class='main-top-banner '>
+							<h3 class='text-center vertical-middle'><b>{{board.name}}</b></h3>
+						</div> <!-- END top banner -->
+						<div  class='section-container' >
+							<!-- <h1 class='vertical-middle text-center'>{{board.name}}</h1> -->
+							<div class='section box box-t open_sec' ng-repeat='section in board.sections' secheight> 
+								<!-- <div class='top-bar-box text-center white-shadow' > 
+									<span class='d-block  vertical-middle'><b class='color-white'>{{section.name}}</b></span> 
+									<i secbutton class='icon icon-arrow pull-right vertical-middle icon-40 text-center'><p class="fa fa-2x fa-angle-down vertical-middle color-white"></p></i>
+								</div> -->
+								
+								<div secbutton class='sec-button color-white'>
+									<p class='color-white'> {{section.name}}<i class="fa  fa-long-arrow-down  color-white close-arrow "></i></p>
+								</div>
+								<div class="sec-item-container ">
+									<div class="overflow-h"  as-sortable="sortableOptions" ng-model="itemsList.items1">
+										<div openpop class="item" ng-click='click_card($index)' ng-repeat="item in itemsList.items1"  as-sortable-item>
+											<div class='p-10 bg-white item-wrap' >	
+												<div class='handle text-center' as-sortable-item-handle><i class="fa fa-arrows-alt "></i></div>
+												<div>
+													
+													<p><b>{{item.Label}} : </b> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and 
+													<!-- <img style='width: 100px' src='img/item2.jpg'/> -->Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
+													
+												</div>
+												<div class='item-footer bg-white'>
+													<div class='control'></div>
+													<div class='control'></div>
+													<div class='control'></div>
+													<div class='control no-border'><p class='text-center vertical-middle'><i class="fa fa-heart color-red "></i><span>203</span></p></div>
+													
+												</div>
+											</div>	
+										</div>
+									</div>
+								</div> <!-- /container -->
+							</div>
+							
+						</div>
+						
+					</div> <!-- END Board -->
+					
+				</div> <!-- END Scroller -->
+			</div><!-- END wrapper -->	
+		</div>
+	</div>
+    <div id='pop-up'  class='' full-height>
+		<img id='pop-close' src='img/close.png'  popclose />
+		<div id='pop-up-slider' class='box' popup resize full-height='-40'>
+			<div class='scroller' ng-style='pop_scroller_style'>
+				<div class='pop-slide' ng-style='pop_slide_style' ng-repeat='item in itemsList.items1'>
+					<div class='head-box'><p class='text-center vertical-middle'>{{item.Label}}</p></div>
+					<div class='content-box'>
+						<div class='section-box'>
+							<div id='' as-sortable="Sort_control" ng-model="itemsList.control_1" class=' sec-content card-items'>
+								<!-- <div class='card-items' as-sortable="Sort_control"  ng-model='itemsList.items3'>
+									<div as-sortable-item-handle class='card-item' ng-repeat="item in itemsList.items3" as-sortable-item>
+										<p  > {{item.Label}}</p>
+									</div>
+								</div> -->
+								
+									<div   class='card-item'  ng-repeat="item in itemsList.control_1"   as-sortable-item>
+									  <div  class='p-10 bg-white border-grey'>	
+										  <h2>{{item.id}}</h2>
+										  <p>Donec id elit non mi porta gravida at ege </p>
+										  <p as-sortable-item-handle><a class="btn btn-default" href="#"   >Move</a></p>
+										
+									  </div>	
+									</div>
+								
+							</div>
+						</div>
+						<div class='dash-box'   >
+						
+							<div class='dash-items' as-sortable="contol_list" ng-model="itemsList.control" >
+								<div class='card-item dash-item' ng-repeat='item in itemsList.control' as-sortable-item>
+									<div  style='height: 100%' as-sortable-item-handle>
+										<p>{{item.id}}</p>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='bottom-box'>
+					</div>
+				</div>
+			</div>	
+		</div>
+		
+	</div>
+  </body>
+
+</html>

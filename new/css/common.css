@@ -1,0 +1,198 @@
+*{
+	    box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	border: none;
+	/* -webkit-appearance: none; */
+	
+}
+html,body{
+	height: 100%;
+	width: 100%;
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../fonts/OpenSans-Regular.ttf');
+  /*   src: url('../fonts/calibri-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/calibri-webfont.svg#calibriregular') format('svg'),
+         url('../fonts/calibri-webfont.woff') format('woff'),
+         url('../fonts/calibri-webfont.ttf') format('truetype'); */
+   
+   font-weight: normal;
+   font-style: normal;
+
+} 
+
+@font-face {
+    font-family: 'OpenSans1';
+    src: url('../fonts/OpenSans-Light.ttf');
+  /*   src: url('../fonts/calibri-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/calibri-webfont.svg#calibriregular') format('svg'),
+         url('../fonts/calibri-webfont.woff') format('woff'),
+         url('../fonts/calibri-webfont.ttf') format('truetype'); */
+   
+   font-weight: 300;
+   font-style: normal;
+
+} 
+
+
+
+/* Background color */
+.bg-red{ /* background-color: red; */background-color: #F7DBDB; }
+.bg-gray{ background-color: #EEEEEE;}
+.bg-white{ background-color: #fff; }
+.bg-blue{/*  background-color: #0088CC; */ background-color: #f3f3f3; }
+
+.bg-t-blue{ background-color: #39435C; }
+.bg-t-blue-l{ background-color:#F0F3F4 }
+.bg-t-blue-m{ background-color:#D9EDF7 }
+
+.p-20{ padding: 20px !important; }
+.p-10{ padding: 10px !important; }
+
+/* TEXT COLOR*/
+
+.color-red{
+	color: red;
+}
+.border-grey{ border: 1px solid #fff; }
+
+/* Middle */
+
+.vertical-middle{
+	position: relative; 
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	/* display: inline-block; */
+ }
+.txt-middle> * {
+  vertical-align: middle;
+}
+
+
+/* Margin */
+
+.m-top-40p{ margin-top: 40px;}
+
+/* Padding */
+
+.p-20px{ padding: 20px; }
+
+/* Heights*/
+
+.h-100p{
+	height: 100%;
+}
+.icon{
+	cursor: pointer;
+}
+.icon-40{
+	height: 40px;
+	width: 50px;
+}
+
+/* position */
+.relative{ position: relative; }
+.p-top-balance{
+	padding-top: .1px
+}
+
+#viewport {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	/* background: #444; */
+	overflow: hidden;
+	/* -webkit-box-shadow: inset 0px 0px 56px -18px rgba(0,0,0,0.43);
+-moz-box-shadow: inset 0px 0px 56px -18px rgba(0,0,0,0.43);
+box-shadow: inset 0px 0px 56px -18px rgba(0,0,0,0.43); */
+}
+#pop-up-slider {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	/* background: #444; */
+	overflow: hidden;
+	/* -webkit-box-shadow: inset 0px 0px 56px -18px rgba(0,0,0,0.43);
+-moz-box-shadow: inset 0px 0px 56px -18px rgba(0,0,0,0.43);
+box-shadow: inset 0px 0px 56px -18px rgba(0,0,0,0.43); */
+}
+
+
+#wrapper {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.scroller {
+	position: absolute;
+	z-index: 1;
+	/* -webkit-tap-highlight-color: rgba(0,0,0,0); */
+	width: 400px;
+	height: 100%;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+	/* background-color: #444; */
+}
+.slide {
+	width: 200px;
+	height: 100%;
+	float: left;
+}
+
+.color-blue{ color: #67B0D1;}
+.color-red{ color: #E46F4C}
+
+/* 					Theme 
+=============================================*/
+.box-t{border-radius: 3px;
+-/* webkit-box-shadow: 0px 0px 3px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 3px -1px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 3px -1px rgba(0,0,0,0.75); */
+}
+.d-block{ display: inline-block;}
+.text-center{ text-align: center;}
+.overflow-h{ overflow: hidden;}
+.white-shadow{
+-webkit-box-shadow: 0px -1px 3px 1px rgba(255,255,255,1);
+-moz-box-shadow: 0px -1px 3px 1px rgba(255,255,255,1);
+box-shadow: 0px -1px 3px 1px rgba(255,255,255,1);
+}
+.clear{clear: both;}
+
+/* SCROLL BAR*/
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    /* border-radius: 10px; */
+}
+ 
+::-webkit-scrollbar-thumb {
+	background-color:#67B0D1;
+    /* border-radius: 10px; */
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);  */
+}

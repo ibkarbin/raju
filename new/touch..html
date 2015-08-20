@@ -1,0 +1,39 @@
+<div class="container-fluid m-top-40p">
+		  <div class='row '>
+			 <div id='left' class='col-md-8  col-xs-8 bg-gray ' >
+				<div class='p-20'>
+					<div class="row "  as-sortable="sortableOptions" ng-model="itemsList.items1">
+						<div class="item"  ng-repeat="item in itemsList.items1"  as-sortable-item>
+						  <div class='p-10 bg-white border-grey' as-sortable-item-handle>	
+							  <h2>{{item.Label}}</h2>
+							  <p>Donec id elit non mi porta gravida at ege </p>
+							  <p><a class="btn btn-default" href="#" role="button">click</a></p>
+						  </div>	
+						</div>
+					</div>
+				</div>
+			 </div>
+			 <div id='right' class='col-md-4  col-xs-4 bg-gray'>
+				<div class='p-20'>
+					<div class="row "  as-sortable="sortableOptions" ng-model="itemsList.items2">
+						<div class="item"  ng-repeat="item in itemsList.items2"  as-sortable-item>
+						  <div class='p-10 bg-blue border-grey' as-sortable-item-handle>	
+							  <h2 class='color-white'>{{item.Label}}</h2>
+							  <p class='color-white'>Donec id elit non mi porta gravida at ege </p>
+							  <p><a class="btn btn-default" href="#" role="button">click</a></p>
+						  </div>	
+						</div>
+					</div>
+				</div>
+
+			 </div>
+			 
+		 
+		  </div>
+		  
+		  <hr>
+
+		  <footer>
+			<p>&copy;  Graaph</p>
+		  </footer>
+		</div> <!-- /container -->

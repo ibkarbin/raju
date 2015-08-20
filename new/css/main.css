@@ -1,0 +1,250 @@
+
+.left-box{  }
+.list-item{ margin-bottom: 20px; }
+
+.m-h-100p{ min-height: 100px; }
+
+.rel{ position: relative !important; }
+
+/* Put your css in here */
+
+.as-sortable-item{
+    /* min-width: 150px; */
+    
+}
+#right .as-sortable-item{
+    /* min-width: 100px !important; */
+    
+}
+.as-sortable-placeholder {
+    
+    float: left;
+	
+}
+
+.color-white{
+	color:white;
+}
+.item{
+	float: left;
+}
+
+
+
+#left .item{
+	
+}
+
+#left .item,
+#left .as-sortable-placeholder
+{
+	width: 33.333% !important;
+}
+#right .item,
+#right .as-sortable-placeholder{
+	width: 50% !important;
+}
+#right .as-sortable-placeholder{
+	background: #00498d;
+}
+.as-sortable-placeholder{
+	width: 100%;
+}
+/*.sortable-row:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}*/
+
+#sortable-container {
+    display: inline-block;
+}
+
+
+
+/* Main style 
+==============================================*/
+
+
+.main-top-banner .r-box{ height: 40px; }
+
+
+
+#main-container{
+    height: calc( 100% - 40px) ;
+	/* padding: 20px;  */
+}
+
+#title-box{ position: absolute;width: 100%; left: 0; z-index: 10;top:0; height: 100%; }
+
+#sub-title-box{ position: absolute;width: 100%; left: 0; z-index: 9;top:40px; height:calc( 100% - 40px) }
+
+
+.box{  /* overflow: hidden; */
+	-webkit-transition: all 200ms ease ;
+    -moz-transition: all 200ms ease ;
+    -o-transition: all 200ms ease ;
+    transition: all 200ms ease ;
+}
+.box.close1{ height: 40px !important; }
+.box.open{  z-index: 20 !important; }
+
+
+.middle-container{
+	height: calc( 100% - 40px);
+	
+}
+.split-item{
+	float: right;
+	border: 1px solid #AEBEC6;
+	transition: all .1s ease-in-out;
+}
+.closed{
+	/* transition: all .1s ease-in-out */
+	
+}
+#left-angle{
+	position: absolute;
+	left: 0;
+	z-index: 30;
+	padding: 0 12px;
+}
+#right-angle{
+	position: absolute;
+	right: 0;
+	z-index: 30;
+	padding: 0 12px;
+}
+#add-board{
+	position: absolute;
+	bottom: 20px;
+	right: 50px;
+	z-index: 30;
+	background-color: green;
+	width: 50px;
+	height: 50px;
+	border-radius: 30px;
+}
+
+
+#pop-up{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 400;
+	height: 100%;
+	background-color: rgba(0,0,0,.8);
+}
+#pop-up .box{
+	max-width : 900px;
+	margin: 0 auto;
+	height: calc( 100% - 40px);
+	margin-top: 20px;
+	/* background-color: #F0F3F4; */
+	background-color: #FFFFFF;
+	border-radius: 5px;
+}
+.head-box{
+	border-bottom: 1px solid #E0E0E0;
+	background-color: #F0F3F4;
+	height: 40px;
+}
+#pop-up{
+	display: none;
+}
+#pop-up .content-box{
+	height: calc( 100% - 120px );
+	overflow: hidden;
+}
+#pop-up .bottom-box{
+	height: 80px;
+	background-color: #F0F3F4;
+	border-top: 1px solid #E0E0E0;
+}
+
+#pop-up .section-box{
+	float: left;
+	width: calc( 100% - 150px );
+	border-right: 1px solid #E0E0E0;
+	height: 100%;
+	/* padding: 20px 40px; */
+}
+#pop-up .card-items{
+	width: 90%;
+	margin: 0 auto;
+	overflow: auto;
+}
+#pop-up .dash-box{
+	float: left;
+	width: 150px;
+	height: 100%;	
+	padding-top: 20px;
+	overflow: auto;
+	/* border-right: 1px solid #E0E0E0; */
+}
+.pop-slide{
+	height: 100%;
+	float: left;
+}
+#pop-up .scroller{
+	z-index: 500;
+}
+#pop-up .sec-content{
+	height: 100%;
+	width: 100%;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch !important;
+	padding: 40px;
+}
+
+#pop-close{
+	position: absolute;
+	z-index: 501;
+	right: 30px;
+	top: 30px;
+	opacity: .7;
+	width: 20px;
+	height: 20px;
+}
+#pop-close:hover{
+	opacity: 1;
+}
+#pop-up .sec-content .card-item{
+	width: 100%;
+	/* min-height: 200px; */
+    background-color: red;	
+	float: left;
+	margin-bottom: 20px;
+	border: 1px solid #E0E0E0;
+	background-color: #F0F3F4;
+	border-radius: 5px;
+}
+#pop-up .dash-box .dash-items{
+	width: 100px;
+	margin: 0 auto;
+	height: 100%;
+}
+#pop-up .dash-box .dash-items{
+	width: 100px;
+	margin: 0 auto;
+	height: 100%;
+}
+#pop-up .as-sortable-placeholder{
+	width: 100%;
+}
+#pop-up  .dash-item{
+	background-color: red;
+	height: 50px;
+	float: left;
+	margin: 10px 0;
+	width: 100% !important;
+	background-color: #F0F3F4;
+	min-width: 0;
+}
+
+
+/* #5D5047 */
+
